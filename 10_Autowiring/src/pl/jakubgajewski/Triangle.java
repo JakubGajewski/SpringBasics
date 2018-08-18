@@ -1,0 +1,59 @@
+package pl.jakubgajewski;
+
+public class Triangle {
+
+    private TriangleType type;
+
+    private Point pointA;
+    private Point pointB;
+    private Point pointC;
+
+    public TriangleType getType() {
+        return type;
+    }
+
+    public void setType(TriangleType type) {
+        this.type = type;
+    }
+
+    public void draw () {
+        System.out.println("   x   ");
+        System.out.println("  x x   ");
+        System.out.println(" x   x   ");
+        System.out.println("xxxxxxxx ");
+    }
+
+    public Point getPointA() {
+        return pointA;
+    }
+
+    public void setPointA(Point pointA) {
+        this.pointA = pointA;
+    }
+
+    public Point getPointB() {
+        return pointB;
+    }
+
+    public void setPointB(Point pointB) {
+        this.pointB = pointB;
+    }
+
+    public Point getPointC() {
+        return pointC;
+    }
+
+    public void setPointC(Point pointC) {
+        this.pointC = pointC;
+    }
+
+    @Override
+    public String toString() {
+        return "Triangle{" +
+                "type=" + type +
+                ", pointA=" + pointA +
+                ", pointB=" + pointB +
+                ", pointC=" + pointC +
+                '}';
+    }
+}

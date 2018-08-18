@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+    <bean id="triangle" class="pl.jakubgajewski.Triangle" name="Wojciech">
+        <property name="type" value="EQUILATERAL" />
+        <property name="pointA">
+            <ref bean="zeroPoint"/>  <!-- w tutorialu tu idref było, ale to deprecated -->
+        </property>
+        <property name="pointB">
+            <bean class="pl.jakubgajewski.Point">
+                <property name="x" value="20"/>
+                <property name="y" value="0"/>
+            </bean>
+        </property>
+        <property name="pointC">
+            <bean class="pl.jakubgajewski.Point">
+                <property name="x" value="20"/>
+                <property name="y" value="20"/>
+            </bean>
+        </property>
+    </bean>
+    <bean id="circle" class="pl.jakubgajewski.Circle">
+        <constructor-arg value="23" />
+        <constructor-arg ref="zeroPoint"/>
+    </bean>
+    <bean class="pl.jakubgajewski.Circle" id = "circle2">
+        <constructor-arg ref="punktPoczatkowy" />
+        <constructor-arg type="int" value="5" />
+    </bean>
+    <bean class="pl.jakubgajewski.Circle" name = "circle3">
+        <constructor-arg index="0" value="100" />
+        <constructor-arg index="1" ref="lastPoint" />
+    </bean>
+    <bean id="zeroPoint" class="pl.jakubgajewski.Point">
+        <property name="x" value="0"/>
+        <property name="y" value="0"/>
+    </bean>
+    <bean id="lastPoint" class="pl.jakubgajewski.Point">
+        <constructor-arg value="100"></constructor-arg>
+        <constructor-arg value="100"/>
+    </bean>
+    <bean id="description" class="java.lang.String">
+        <constructor-arg value="Just a simple shape, described with string-bean!"/>
+    </bean>
+    <alias name="Wojciech" alias="Wojtek"/>
+    <alias name="zeroPoint" alias="punktPoczatkowy"/>
+</beans>
