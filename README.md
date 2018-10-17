@@ -1,1 +1,1 @@
-Nothing to see here - just my Spring Framework learning notes.
+Nothing to see here - just my Spring learning notes.
